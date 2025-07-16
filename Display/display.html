@@ -41,14 +41,14 @@
             {src: './Jilebi.jpg', name: 'Jilebi'}
         ];
         let index = 0;
-        function changeImg(newIndex){
-            index = newIndex;
+        function changeImg(dummy){
+            index = dummy;
             document.getElementById("d4").src = imageList[index].src;
             document.getElementById("d5").innerHTML = imageList[index].name;
         }
 
         function previousImg(){
-            if(index>0){
+            if(index>=1){
                 index--;
             }
             document.getElementById("d4").src = imageList[index].src;
