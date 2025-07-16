@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="d1"></h1>
+    <h1 id="d2">Chennai</h1>
+    <h1 id="d3">India</h1>
+
+    <button type="button" onclick="changeData()">Change Value</button><br>
+
+    <button type="button" onclick="changeColor('Red')">Red</button>
+    <button type="button" onclick="changeColor('Green')">Green</button>
+    <button type="button" onclick="changeColor('Blue')">Blue</button>
+    <button type="button" onclick="changeColor('Yellow')">Yellow</button>
+    <button type="button" onclick="changeColor('Orange')">Orange</button><br><br>
+
+    <img id="d4" src="./Samosa.jpg" alt="samosa" height="200px" width="300px"><br>
+    <strong id="d5">Samosa</strong><br>
+    <button type="button" onclick="changeImg(0)">Samosa</button>
+    <button type="button" onclick="changeImg(1)">Idly</button>
+    <button type="button" onclick="changeImg(2)">Jilebi</button>
+    <br><br>
+    <button type="button" onclick="previousImg()">Previous</button>
+    <button type="button" onclick="nextImg()">Next</button>
+    <script>
+        function changeData(){
+            document.getElementById("d2").innerHTML = "Tamilnadu";
+        }
+        function changeColor(value){
+            document.getElementById("d2").style.color = value;
+        }
+        const imageList = [
+            {src: './Samosa.jpg', name: 'Samosa'},
+            {src: './Idly.jpg', name: 'Idly'},
+            {src: './Jilebi.jpg', name: 'Jilebi'}
+        ];
+        let index = 0;
+        function changeImg(newIndex){
+            index = newIndex;
+            document.getElementById("d4").src = imageList[index].src;
+            document.getElementById("d5").innerHTML = imageList[index].name;
+        }
+
+        function previousImg(){
+            if(index>0){
+                index--;
+            }
+            document.getElementById("d4").src = imageList[index].src;
+            document.getElementById("d5").innerHTML = imageList[index].name;
+        }
+
+        function nextImg(){
+            if(index<imageList.length){
+                index++;
+            }
+            document.getElementById("d4").src = imageList[index].src;
+            document.getElementById("d5").innerHTML = imageList[index].name;
+        }
+
+        document.getElementById("d1").innerHTML = "Changepond";
+        document.getElementById("d2").style.color = "red";
+        let data = document.getElementById("d3").innerHTML;
+        console.log(data);
+
+        document.getElementById("d4").src = imageList[index].src;
+        document.getElementById("d5").innerHTML = imageList[index].name;
+    </script>
+    
+</body>
+</html>
